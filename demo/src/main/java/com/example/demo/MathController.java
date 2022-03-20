@@ -36,7 +36,7 @@ public class MathController {
 	}
 
 	@RequestMapping("/mathAdvanced/")
-	public String math(String operation, float... values) {
+	public String mathAdvanced(String operation, float... values) {
 		System.out.println("doing math");
 		float result = values[0];
 		switch(operation) {
