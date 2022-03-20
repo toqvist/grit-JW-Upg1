@@ -10,7 +10,32 @@ public class MathController {
 	//http://localhost:8080/math/?operation=division&value=10&value2=2&value3=4
 	//http://localhost:8080/math/?operation=division&values=10+2+3
     
+
 	@RequestMapping("/math/")
+	public String math(String operation, float value1, float value2) {
+		System.out.println("doing math");
+		float result = 0;
+		switch(operation) {
+			case "addition":	
+				result = value1 + value2;
+				break;
+			case "subtraction":
+				result = value1 - value2;
+				break;
+			case "multiplication":
+				result = value1*value2;
+				break;
+			case "division":
+				result = value1/value2;
+				break;
+		}
+		String returnValue = String.valueOf(result);
+		return returnValue;
+
+
+	}
+
+	@RequestMapping("/mathAdvanced/")
 	public String math(String operation, float... values) {
 		System.out.println("doing math");
 		float result = values[0];
