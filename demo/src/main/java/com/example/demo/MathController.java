@@ -6,25 +6,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 public class MathController {
     
-	//http://localhost:8080/math/?operation=addition&value1=1&value2=2
-    @RequestMapping("/math/")
-	public String math(String operation, float value1, float value2) {
+	//http://localhost:8080/math/?operation=addition&value1=1&value2=
+	//http://localhost:8080/math/?operation=division&value=10&value2=2&value3=4
+	//http://localhost:8080/math/?operation=division&values=10+2+3
+    
+	@RequestMapping("/math/")
+	public String math(String operation, float... values) {
 		System.out.println("doing math");
-		float result = 0;
+		float result = values[0];
 		switch(operation) {
 			case "addition":	
-				result = value1 + value2;
+				for (int i=1;i<values.length;i++) {
+					result += values[i];
+				}
 				break;
 			case "subtraction":
-				result = value1 - value2;
+				for (int i=1;i<values.length;i++) {
+					result -= values[i];
+				}
 				break;
 			case "multiplication":
-				result = value1*value2;
+				for (int i=1;i<values.length;i++) {
+					result *= values[i];
+				}
 				break;
 			case "division":
-				result = value1/value2;
+				for (int i=1;i<values.length;i++) {
+					result /= values[i];
+				}
 				break;
 		}
+		System.out.println(result);
 		String returnValue = String.valueOf(result);
 		return returnValue;
 
