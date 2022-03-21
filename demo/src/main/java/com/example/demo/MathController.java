@@ -6,11 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 public class MathController {
     
-	//http://localhost:8080/math/?operation=addition&value1=1&value2=
-	//http://localhost:8080/math/?operation=division&value=10&value2=2&value3=4
-	//http://localhost:8080/math/?operation=division&values=10+2+3
-    
-
+	//http://localhost:8080/math/?operation=addition&value1=1&value2=2
 	@RequestMapping("/math/")
 	public String math(String operation, float value1, float value2) {
 		System.out.println("doing math");
@@ -35,6 +31,8 @@ public class MathController {
 
 	}
 
+	//Ignore this
+	//Attempt at multiple params, will ask later
 	@RequestMapping("/mathAdvanced/")
 	public String mathAdvanced(String operation, float... values) {
 		System.out.println("doing math");
