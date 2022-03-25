@@ -44,9 +44,9 @@ public class MathController implements ErrorController{
 		index += "<!DOCTYPE html>";
 		index += "<html lang=\"en\">";
 		index += "<head><meta charset=\"UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Page not found</title></head>";
-		index += "<body><h1>Oops! Something went wrong</h1><h2><a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">Learn about other annoyingly ambiguous error messages here</a></h2></body>";
+		index += "<body><h1>Page does not exist</h1><h2>Valid endpoints:</h2><ul>";
+		index += "<li>/math - accepts parameters OPERATION, value1 and value2</li></ul></body>";
 		index += "</html>";
-		index += "</body></html>";
 		return index;
 	}
 
